@@ -9,6 +9,8 @@ package GESTIONES;
 import CapaDatos.Conexion;
 import ClasesPoco.Horarios_Vuelo;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -38,7 +40,7 @@ public class GestionHorariosVuelo implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO aerolinea(\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\") values ('"+this.aero.getDireccion()+"','"+this.aero.getNombreAerolinea()+"','"+this.aero.getNumeroAsiento()+"')");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO horarios_vuelo(destino, fecha, valor_vuelo,numero_vuelo) values ('"+this.aero.getDestino()+"','"+this.aero.getFecha()+"','"+this.aero.getValor_vuelo()+"',"+this.aero.getNumero_vuelo()+")");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -53,7 +55,7 @@ public class GestionHorariosVuelo implements IGestion
     
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("UPDATE aerolinea SET direccion_aerolinea='"+this.aero.getDireccion()+"',  nombreAerolinea='"+this.aero.getNombreAerolinea()+"',numero_asiento='"+this.aero.getNumeroAsiento()+"'");
+    Conexion.GetInstancia().Ejecutar("UPDATE horarios_vuelo SET destino='"+this.aero.getDestino()+"',  fecha='"+this.aero.getFecha()+"',valor_vuelo='"+this.aero.getValor_vuelo()+"'");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -67,9 +69,9 @@ public class GestionHorariosVuelo implements IGestion
     public void Nuevo() throws SQLException {
     
     
-    this.aero.setDireccion(" ");
-    this.aero.setNombreAerolinea(" ");
-    this.aero.setNumeroAsiento(" ");
+    this.aero.setDestino(" ");
+    //this.aero.setFecha();
+    this.aero.setValor_vuelo(0);
     
     }
 
@@ -78,7 +80,7 @@ public class GestionHorariosVuelo implements IGestion
       
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("DELETE FROM aerolinea where nombre_aerolinea='"+this.aero.getNombreAerolinea()+"'");
+    Conexion.GetInstancia().Ejecutar("DELETE FROM horarios_vuelo where nombre_aerolinea="+this.aero.getNumero_vuelo()+"");
     Conexion.GetInstancia().Desconectar();
 //    DELETE FROM `facturacion`.`cliente` WHERE `cliente`.`cedula` = \'123\'"
     }

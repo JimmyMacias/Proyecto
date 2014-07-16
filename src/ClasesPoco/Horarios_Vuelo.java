@@ -113,6 +113,27 @@ public class Horarios_Vuelo {
     public void setValor_vuelo(int valor_vuelo) {
         this.valor_vuelo = valor_vuelo;
     }
+    
+    private int numero_vuelo;
+
+    /**
+     * Get the value of numero_vuelo
+     *
+     * @return the value of numero_vuelo
+     */
+    public int getNumero_vuelo() {
+        return numero_vuelo;
+    }
+
+    /**
+     * Set the value of numero_vuelo
+     *
+     * @param numero_vuelo new value of numero_vuelo
+     */
+    public void setNumero_vuelo(int numero_vuelo) {
+        this.numero_vuelo = numero_vuelo;
+    }
+
 
 
 }
