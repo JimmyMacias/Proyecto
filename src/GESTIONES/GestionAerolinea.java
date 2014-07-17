@@ -39,7 +39,7 @@ public class GestionAerolinea implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO aerolinea(\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\") values ('"+this.aero.getDireccion()+"','"+this.aero.getNombreAerolinea()+"','"+this.aero.getNumeroAsiento()+"')");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO aerolinea(\"numeroAerolinea\",\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\") values ('"+this.aero.getDireccion()+"','"+this.aero.getNombreAerolinea()+"','"+this.aero.getNumeroAsiento()+"', '"+this.aero.getNumeroAerolinea()+"'");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)

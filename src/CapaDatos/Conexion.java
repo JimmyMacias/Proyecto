@@ -56,7 +56,7 @@ public class Conexion
     {
           Conexion.setCadena("jdbc:postgresql://localhost:5432/SistemaVenta");
         Conexion.setUsuario("postgres");
-        Conexion.setPass("vjjimmy92");
+        Conexion.setPass("754724");
     }
     
     public void Conectar()

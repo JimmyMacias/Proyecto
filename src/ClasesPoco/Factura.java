@@ -13,7 +13,8 @@ import ClasesPoco.Cabecera_Factura;
  *
  * @author VjJimmy
  */
-public class Factura {
+public class Factura 
+{
     private ClasesPoco.Cabecera_Factura datosFactura;
     private ClasesPoco.Reservacion datosReservacion;
 
@@ -21,8 +22,4 @@ public class Factura {
         this.datosFactura = datosFactura;
         this.datosReservacion = datosReservacion;
     }
-    
-        
-
-    
 }

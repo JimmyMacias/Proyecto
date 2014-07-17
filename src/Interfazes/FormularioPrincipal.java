@@ -50,6 +50,11 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton3.setText("Factura");
         jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton4.setText("Clientes");
@@ -151,6 +156,12 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         frm3.show();
         this.hide();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         frmFacturaVuelo frm4 = new frmFacturaVuelo();
+        frm4.show();
+        this.hide();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
