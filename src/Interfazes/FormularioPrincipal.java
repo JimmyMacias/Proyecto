@@ -71,10 +71,20 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton5.setText("Horarios");
         jButton5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton6.setText("Reservacion");
         jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton7.setText("Aerolineas");
@@ -162,6 +172,18 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         frm4.show();
         this.hide();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         frmHorariosVuelo frm4 = new frmHorariosVuelo();
+        frm4.show();
+        this.hide();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        frmReservacion frm4 = new frmReservacion();
+        frm4.show();
+        this.hide();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
