@@ -40,7 +40,7 @@ public class GestionHorariosVuelo implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO horarios_vuelo(destino, fecha, valor_vuelo,numero_vuelo) values ('"+this.aero.getDestino()+"','"+this.aero.getFecha()+"','"+this.aero.getValor_vuelo()+"',"+this.aero.getNumero_vuelo()+")");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO horarios_vuelo(destino, fecha, valor_vuelo, numero_vuelo, origen)values ('"+this.aero.getDestino()+"','"+this.aero.getFecha()+"',"+this.aero.getValor()+","+this.aero.getNumeroVuelo()+",'"+this.aero.getOrigen()+"')");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -55,7 +55,7 @@ public class GestionHorariosVuelo implements IGestion
     
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("UPDATE horarios_vuelo SET destino='"+this.aero.getDestino()+"',  fecha='"+this.aero.getFecha()+"',valor_vuelo='"+this.aero.getValor_vuelo()+"'");
+    Conexion.GetInstancia().Ejecutar("UPDATE horarios_vuelo SET destino='"+this.aero.getDestino()+"',  fecha='"+this.aero.getFecha()+"',valor_vuelo='"+this.aero.getValor()+"'");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -71,7 +71,7 @@ public class GestionHorariosVuelo implements IGestion
     
     this.aero.setDestino(" ");
     //this.aero.setFecha();
-    this.aero.setValor_vuelo(0);
+    this.aero.setValor(0);
     
     }
 
@@ -80,7 +80,7 @@ public class GestionHorariosVuelo implements IGestion
       
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("DELETE FROM horarios_vuelo where nombre_aerolinea="+this.aero.getNumero_vuelo()+"");
+    Conexion.GetInstancia().Ejecutar("DELETE FROM horarios_vuelo where nombre_aerolinea="+this.aero.getNumeroVuelo()+"");
     Conexion.GetInstancia().Desconectar();
 //    DELETE FROM `facturacion`.`cliente` WHERE `cliente`.`cedula` = \'123\'"
     }

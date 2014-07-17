@@ -21,7 +21,7 @@ public class GestionAerolinea implements IGestion
 
     public GestionAerolinea() 
     {
-    CapaDatos.Conexion.GetInstancia().Enlace();
+    Conexion.GetInstancia().Enlace();
     }
     
    private Aerolinea aero=new Aerolinea();
@@ -39,7 +39,7 @@ public class GestionAerolinea implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO aerolinea(\"numeroAerolinea\",\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\") values ('"+this.aero.getDireccion()+"','"+this.aero.getNombreAerolinea()+"','"+this.aero.getNumeroAsiento()+"', '"+this.aero.getNumeroAerolinea()+"'");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO aerolinea(direccion_aerolinea, nombre_aerolinea, numero_aerolinea, numero_asiento) values ( '"+this.aero.getDireccion()+"','"+this.aero.getNombreAerolinea()+"',"+this.aero.getNumero_aerolinea()+",'"+this.aero.getNumeroAsiento()+"')");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -54,7 +54,7 @@ public class GestionAerolinea implements IGestion
     
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("UPDATE aerolinea SET direccion_aerolinea='"+this.aero.getDireccion()+"',  nombreAerolinea='"+this.aero.getNombreAerolinea()+"',numero_asiento='"+this.aero.getNumeroAsiento()+"'");
+    Conexion.GetInstancia().Ejecutar("UPDATE aerolinea SET numero_aerolinea='"+this.aero.getNumero_aerolinea()+"', direccion_aerolinea='"+this.aero.getDireccion()+"',  nombreAerolinea='"+this.aero.getNombreAerolinea()+"',numero_asiento='"+this.aero.getNumeroAsiento()+"'");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -67,7 +67,7 @@ public class GestionAerolinea implements IGestion
     @Override
     public void Nuevo() throws SQLException {
     
-    
+    this.aero.setNumero_aerolinea(0);
     this.aero.setDireccion(" ");
     this.aero.setNombreAerolinea(" ");
     this.aero.setNumeroAsiento(" ");
@@ -92,12 +92,12 @@ public class GestionAerolinea implements IGestion
     @Override
     public void Consultar() throws SQLException {
       Conexion.GetInstancia().Conectar();    
-    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT \"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\"  FROM aerolinea WHERE nombre_aerolinea ='"+aero.getNombreAerolinea()+"'");
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_aerolinea,\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\"  FROM aerolinea WHERE nombre_aerolinea ='"+aero.getNombreAerolinea()+"'");
     while(cn.next())
-    {
-        this.aero.setDireccion(cn.getString(1));
-        this.aero.setNombreAerolinea(cn.getString(2));
-        this.aero.setNumeroAsiento(cn.getString(3));        
+    {   this.aero.setNumero_aerolinea(Integer.parseInt(cn.getString(1)));
+        this.aero.setDireccion(cn.getString(2));
+        this.aero.setNombreAerolinea(cn.getString(3));
+        this.aero.setNumeroAsiento(cn.getString(4));        
     }
     Conexion.GetInstancia().Desconectar();
     }

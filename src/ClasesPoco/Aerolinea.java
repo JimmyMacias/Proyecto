@@ -12,33 +12,33 @@ package ClasesPoco;
  */
 public class Aerolinea {
 
-    public Aerolinea(int numeroAerolinea, String nombreAerolinea, String direccion, String idAerolinea, String numeroAsiento) {
-        this.numeroAerolinea = numeroAerolinea;
+    public Aerolinea(int numero_aerolinea, String nombreAerolinea, String direccion, String idAerolinea, String numeroAsiento) {
+        this.numero_aerolinea = numero_aerolinea;
         this.nombreAerolinea = nombreAerolinea;
         this.direccion = direccion;
         this.idAerolinea = idAerolinea;
         this.numeroAsiento = numeroAsiento;
     }
-    
 
-       private int numeroAerolinea;
+
+          private int numero_aerolinea;
 
     /**
-     * Get the value of numeroAerolinea
+     * Get the value of numero_aerolinea
      *
-     * @return the value of numeroAerolinea
+     * @return the value of numero_aerolinea
      */
-    public int getNumeroAerolinea() {
-        return numeroAerolinea;
+    public int getNumero_aerolinea() {
+        return numero_aerolinea;
     }
 
     /**
-     * Set the value of numeroAerolinea
+     * Set the value of numero_aerolinea
      *
-     * @param numeroAerolinea new value of numeroAerolinea
+     * @param numero_aerolinea new value of numero_aerolinea
      */
-    public void setNumeroAerolinea(int numeroAerolinea) {
-        this.numeroAerolinea = numeroAerolinea;
+    public void setNumero_aerolinea(int numero_aerolinea) {
+        this.numero_aerolinea = numero_aerolinea;
     }
 
     private String nombreAerolinea;

@@ -6,7 +6,7 @@
 
 package ClasesPoco;
 
-import ClasesPoco.Cabecera_Factura;
+
 
 
 /**
@@ -15,11 +15,15 @@ import ClasesPoco.Cabecera_Factura;
  */
 public class Factura 
 {
-    private ClasesPoco.Cabecera_Factura datosFactura;
-    private ClasesPoco.Reservacion datosReservacion;
-
-    public Factura(Cabecera_Factura datosFactura, Reservacion datosReservacion) {
-        this.datosFactura = datosFactura;
-        this.datosReservacion = datosReservacion;
+    
+    private String numeroFactura;
+//
+    public String getNumeroFactura() {
+        return numeroFactura;
     }
+
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
 }
