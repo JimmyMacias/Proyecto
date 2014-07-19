@@ -6,6 +6,9 @@
 
 package Interfazes;
 
+import java.awt.Dimension;
+import java.awt.Rectangle;
+
 /**
  *
  * @author VjJimmy
@@ -17,8 +20,14 @@ public class FormularioPrincipal extends javax.swing.JFrame {
      */
     public FormularioPrincipal() {
         initComponents();
+        centrarFrame();
     }
-
+private void centrarFrame() {
+        Dimension dim = this.getToolkit().getScreenSize();
+        Rectangle rec = this.getBounds();
+        this.setLocation((dim.width - rec.width) / 2, ((dim.height - rec.height) / 2) - 20);
+        this.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -168,7 +177,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         frmFacturaVuelo frm4 = new frmFacturaVuelo();
+         frmFacturasVuelos frm4 = new frmFacturasVuelos();
         frm4.show();
         this.hide();
     }//GEN-LAST:event_jButton3ActionPerformed

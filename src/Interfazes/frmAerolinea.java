@@ -4,7 +4,6 @@ package Interfazes;
 import GESTIONES.GestionAerolinea;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import java.awt.Color;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,7 +24,6 @@ public class frmAerolinea extends javax.swing.JFrame {
    
     public frmAerolinea() {
         initComponents();
-        getContentPane().setBackground(Color.white);
     }
 public void enviarValores(){
         

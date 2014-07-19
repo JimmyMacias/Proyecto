@@ -18,9 +18,7 @@ public class GestionFactura   implements IGestion
     
     public GestionFactura() 
     {
-        Conexion.setCadena("jdbc:postgresql://localhost:5432/SistemaVenta");
-        Conexion.setUsuario("postgres");
-        Conexion.setPass("vjjimmy92");
+       Conexion.GetInstancia().Enlace();
     }
     
    private Factura empleado=new Factura();

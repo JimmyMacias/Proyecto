@@ -21,9 +21,7 @@ public class GestionEmpleado implements IGestion
 
     public GestionEmpleado() 
     {
-        Conexion.setCadena("jdbc:postgresql://localhost:5432/SistemaVenta");
-        Conexion.setUsuario("postgres");
-        Conexion.setPass("vjjimmy92");
+        Conexion.GetInstancia().Enlace();
     }
     
    private Empleado empleado=new Empleado();

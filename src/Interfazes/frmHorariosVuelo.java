@@ -41,6 +41,7 @@ public void  pedirValores(){
         txtOrigen.setText(gestClient.getHorarios().getOrigen());
         dtFecha.setDate(gestClient.getHorarios().getFecha());
         txtNumeroVuelo.setText(Integer.toString(gestClient.getHorarios().getNumeroVuelo()));
+        txtValorVuelo.setText(Integer.toString(gestClient.getHorarios().getValor()));
         
 }
         //txtCupo.setText(Double.toString(gestClient.getCliente().getCupo()));
@@ -285,7 +286,7 @@ public void  pedirValores(){
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-       // gestClient.getEmpleado().setCedula(txtNumeroVuelo.getText());
+      gestClient.getHorarios().setNumeroVuelo(Integer.parseInt(txtNumeroVuelo.getText()));
 
         try
         {

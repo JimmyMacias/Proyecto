@@ -8,9 +8,10 @@ package GESTIONES;
 
 import CapaDatos.Conexion;
 import ClasesPoco.Horarios_Vuelo;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import javax.swing.table.DefaultTableModel;
+
 
 
 /**
@@ -19,10 +20,10 @@ import java.util.Date;
  */
 public class GestionHorariosVuelo implements IGestion
 {
-
+DefaultTableModel m;
     public GestionHorariosVuelo() 
     {
-    CapaDatos.Conexion.GetInstancia().Enlace();
+     Conexion.GetInstancia().Enlace();
     }
     
    private Horarios_Vuelo aero=new Horarios_Vuelo();
@@ -92,6 +93,29 @@ public class GestionHorariosVuelo implements IGestion
 
     @Override
     public void Consultar() throws SQLException {
+       try{
+    
+    Conexion.GetInstancia().Conectar();
+    
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT destino, fecha, valor_vuelo, numero_vuelo, origen  FROM horarios_vuelo  WHERE numero_vuelo="+aero.getNumeroVuelo()+"");
+    while(cn.next())
+    {
+       this.aero.setDestino(cn.getString(1));
+        this.aero.setFecha(cn.getDate(2));        
+        this.aero.setValor(Integer.parseInt(cn.getString(3)));
+        this.aero.setNumeroVuelo(Integer.parseInt(cn.getString(4)));
+        this.aero.setOrigen(cn.getString(5));
+                
+    }
+    Conexion.GetInstancia().Desconectar();
+    }
+    catch(SQLException e)
+    {
+    throw e;
+    }
      
+   
     }
-    }
+    
+   
+}

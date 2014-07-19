@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-package ClasesPoco;
+package GESTIONES;
 
 import java.util.Date;
 
-/**
- *
- * @author VjJimmy
- */
+public class Person {
 
-public class Horarios_Vuelo {
-
-    public Horarios_Vuelo(String destino, String origen, Date fecha, int numeroVuelo, int valor) {
+    public Person(String destino, String origen, Date fecha, int numeroVuelo, int valor) {
         this.destino = destino;
         this.origen = origen;
         this.fecha = fecha;
@@ -61,7 +51,7 @@ public class Horarios_Vuelo {
 
     private int numeroVuelo;
 
-    public Horarios_Vuelo() {
+    public Person() {
     }
 
   
@@ -83,8 +73,4 @@ public class Horarios_Vuelo {
     public void setValor(int valor) {
         this.valor = valor;
     }
-
-
-
-
 }

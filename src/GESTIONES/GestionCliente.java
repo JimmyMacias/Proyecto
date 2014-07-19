@@ -21,9 +21,7 @@ public class GestionCliente implements IGestion
 
     public GestionCliente() 
     {
-        Conexion.setCadena("jdbc:postgresql://localhost:5432/SistemaVenta");
-        Conexion.setUsuario("postgres");
-        Conexion.setPass("vjjimmy92");
+       Conexion.GetInstancia().Enlace();
     }
     
    private Cliente client=new Cliente();
@@ -95,8 +93,7 @@ public class GestionCliente implements IGestion
 
     @Override
     public void Consultar() throws SQLException {
-      Conexion.GetInstancia().Conectar();
-    
+      Conexion.GetInstancia().Conectar();    
     ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_pass, nombre, cedula, direccion, telefono  FROM cliente WHERE cedula ='"+client.getCedula()+"'");
     while(cn.next())
     {

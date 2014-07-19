@@ -4,7 +4,6 @@ package Interfazes;
 import GESTIONES.GestionCliente;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import java.awt.Color;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,7 +24,7 @@ public class frmClientes extends javax.swing.JFrame {
    
     public frmClientes() {
         initComponents();
-        getContentPane().setBackground(Color.white);
+        
     }
 public void enviarValores(){
         gestClient.getCliente().setNumeroPass(txtNumeroPass.getText());
