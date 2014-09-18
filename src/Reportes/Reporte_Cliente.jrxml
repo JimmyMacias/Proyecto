@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0a8a8d2-8096-4062-a556-35d83ff5069d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from cliente]]>
+	</queryString>
+	<field name="numero_pass" class="java.lang.String"/>
+	<field name="id_cliente" class="java.math.BigDecimal"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement uuid="cdc96304-4476-47f9-b6df-f523cd320b70" x="396" y="0" width="101" height="79"/>
+				<imageExpression><![CDATA["C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\resource\\clientes.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="9264dcfc-3d89-4c88-9062-7f0934e76bf8" x="75" y="19" width="227" height="60"/>
+				<textElement>
+					<font size="26" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a1a31637-1bcc-4b5c-ba85-29da2c62e5a9" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[numero_pass]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="592a4785-41f0-4504-844c-3b4e75865146" x="100" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="def44b81-55c1-4bcb-8408-a06c95ee061b" x="231" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b73ead5a-2b1d-4e86-b057-7a2fee68d13f" x="350" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="da947d81-6858-4b44-bf93-821b6dd536b2" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a21b08d2-c307-42bc-a44d-4c6a722fc86b" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numero_pass}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="05007ef8-ae5b-4463-b143-172829c9fddd" x="100" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5ad0ec3a-7056-4bbf-a343-b32a261cad7b" x="231" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4df0931d-a9b9-4c75-be0c-c214bc388db0" x="350" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f3d16de-80ba-4706-b049-2ca7cddbe05e" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

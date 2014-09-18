@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="709487e5-5d41-4eb8-8789-5999befd0592">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from horarios_vuelo]]>
+	</queryString>
+	<field name="destino" class="java.lang.String"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="valor_vuelo" class="java.math.BigDecimal"/>
+	<field name="numero_vuelo" class="java.math.BigDecimal"/>
+	<field name="origen" class="java.lang.String"/>
+	<field name="id_aerolinea" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement uuid="6f9afe3b-5431-43fd-89db-17f91e9a1afa" x="444" y="0" width="100" height="79"/>
+				<imageExpression><![CDATA["C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\resource\\Aerolineas.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c7323630-0e47-4431-9eb8-cb057f0c7e4b" x="1" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[numero_vuelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="254022bd-ee35-4d91-be98-14b9d48b11eb" x="113" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f38dd17-c8f0-4adb-95dc-3b370d920757" x="221" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[destino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cd2ef50e-be14-4b17-b2e3-91d242b85da7" x="328" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[origen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="11b9430e-8dce-41ed-a54c-e80370155671" x="448" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[valor_vuelo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b44d7fbc-5600-418e-a279-3e20ebb43042" x="1" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numero_vuelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2b339313-a63b-461e-90a3-167f9901096f" x="113" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e94183c-b330-40ea-a100-b3faf1f4745c" x="221" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{destino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b3518a22-901e-4f18-befc-398db0973510" x="328" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="80d0eec5-4cae-4d26-92ee-3ccc8549d9f3" x="448" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{valor_vuelo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -43,7 +43,7 @@ public class GestionReservacion implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO reservacion(cedula_cliente, nombre_cliente, fecha, numero_reservacion, numero_vuelo, valor_vuelo) VALUES ( '"+this.aero.getCedula()+"','"+this.aero.getNombre()+"','"+this.aero.getFecha()+"',"+this.aero.getNumeroResevacion()+","+this.aero.getNumeroVuelo()+")");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO reservacion(cedula_cliente, nombre_cliente, fecha, numero_reservacion, numero_vuelo, valor_vuelo) VALUES ( '"+this.aero.getCedula()+"','"+this.aero.getNombre()+"','"+this.aero.getFecha()+"',"+this.aero.getNumeroResevacion()+","+this.aero.getNumeroVuelo()+","+this.aero.getValor_vuelo()+")");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -95,14 +95,17 @@ public class GestionReservacion implements IGestion
 
     @Override
     public void Consultar() throws SQLException {
-//      Conexion.GetInstancia().Conectar();    
-//    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_aerolinea,\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\"  FROM aerolinea WHERE nombre_aerolinea ='"+aero.getNombreAerolinea()+"'");
-//    while(cn.next())
-//    {   this.aero.setNumero_aerolinea(Integer.parseInt(cn.getString(1)));
-//        this.aero.setDireccion(cn.getString(2));
-//        this.aero.setNombreAerolinea(cn.getString(3));
-//        this.aero.setNumeroAsiento(cn.getString(4));        
-//    }
-//    Conexion.GetInstancia().Desconectar();
+     Conexion.GetInstancia().Conectar();    
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT cedula_cliente, nombre_cliente, fecha, numero_reservacion, numero_vuelo, valor_vuelo FROM reservacion WHERE numero_reservacion="+aero.getNumeroResevacion()+"");
+    while(cn.next())
+    {   this.aero.setCedula((cn.getString(1)));
+        this.aero.setNombre(cn.getString(2));
+        this.aero.setFecha(cn.getDate(3));
+        this.aero.setNumeroResevacion(cn.getInt(4));
+        this.aero.setNumeroVuelo(cn.getInt(5));
+        this.aero.setValor_vuelo(cn.getInt(6));
+        
+    }
+    Conexion.GetInstancia().Desconectar();
     }
 }

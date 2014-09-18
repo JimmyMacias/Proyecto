@@ -11,9 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
+
 
 /**
  *
@@ -21,7 +19,11 @@ import java.util.Set;
  */
 public class Conexion 
 {
- Connection Conn=null;
+
+    public Conexion() {
+    }
+    
+    Connection Conn=null;
     PreparedStatement Sentencia=null;
     ResultSet setDeResultados=null;
     static String  usuario=null;
@@ -57,7 +59,8 @@ public class Conexion
     {
           Conexion.setCadena("jdbc:postgresql://localhost:5432/SistemaVenta");
         Conexion.setUsuario("postgres");
-            Conexion.setPass("vjjimmy92");
+            Conexion.setPass("Vjjimmy92");
+        
             
     }
     
@@ -110,4 +113,5 @@ public class Conexion
     
     
     }
+   
 }

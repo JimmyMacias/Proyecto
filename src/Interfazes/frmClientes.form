@@ -34,7 +34,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="85" max="32767" attributes="0"/>
+                              <EmptySpace pref="29" max="32767" attributes="0"/>
                               <Component id="txtNumeroPass" min="-2" pref="138" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -53,9 +53,9 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                       <Component id="btnRetornar1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -78,10 +78,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -189,7 +189,7 @@
     </Component>
     <Component class="java.awt.Button" name="btnEliminar">
       <Properties>
-        <Property name="actionCommand" type="java.lang.String" value="Modificar"/>
+        <Property name="actionCommand" type="java.lang.String" value="Eliminar"/>
         <Property name="label" type="java.lang.String" value="Eliminar"/>
       </Properties>
       <Events>
@@ -207,7 +207,7 @@
     </Component>
     <Component class="java.awt.Button" name="btnNuevo">
       <Properties>
-        <Property name="actionCommand" type="java.lang.String" value="Consultar"/>
+        <Property name="actionCommand" type="java.lang.String" value="Nuevo"/>
         <Property name="label" type="java.lang.String" value="Nuevo"/>
       </Properties>
       <Events>
@@ -216,7 +216,7 @@
     </Component>
     <Component class="java.awt.Button" name="btnRetornar1">
       <Properties>
-        <Property name="actionCommand" type="java.lang.String" value="Consultar"/>
+        <Property name="actionCommand" type="java.lang.String" value="Retornar"/>
         <Property name="label" type="java.lang.String" value="Retornar"/>
       </Properties>
       <Events>

@@ -86,20 +86,11 @@ public class Reservacion {
 
     private int numeroVuelo;
 
-    /**
-     * Get the value of numeroVuelo
-     *
-     * @return the value of numeroVuelo
-     */
     public int getNumeroVuelo() {
         return numeroVuelo;
     }
 
-    /**
-     * Set the value of numeroVuelo
-     *
-     * @param numeroVuelo new value of numeroVuelo
-     */
+ 
     public void setNumeroVuelo(int numeroVuelo) {
         this.numeroVuelo = numeroVuelo;
     }

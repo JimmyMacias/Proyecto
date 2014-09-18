@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9dab936a-ee71-4585-be86-f4be15f07725">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select cliente.nombre, cliente.numero_pass , cabezera_factura.fecha_emision from
+cliente inner join cabezera_factura on cabezera_factura.id_cliente = cliente.id_cliente where cabezera_factura.fecha_emision between '2014-02-01' and '2014-02-28';
+
+
+]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="numero_pass" class="java.lang.String"/>
+	<field name="fecha_emision" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7d8961b1-82b2-4670-9932-13b91c9ef6b7" x="142" y="14" width="280" height="40"/>
+				<textElement>
+					<font size="22" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte mes de febrero]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="23aaaa63-e08a-473f-9c86-1be3553383bc" x="14" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[numero_pass]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e95b12a5-0bb6-403a-b0de-46357dc40266" x="139" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be1c244e-d0e9-458d-8f51-eefec00756c7" x="301" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[fecha_emision]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4c7a1466-f3d5-4a18-a751-685f267ffc05" x="14" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numero_pass}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="45783391-dd85-481d-997d-a999544ba9a6" x="139" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4c4d44e-f3cf-483a-ac29-7249daf1ab8b" x="301" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_emision}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -27,6 +27,8 @@ public class Horarios_Vuelo {
     
     
          private String destino;
+
+  
     
     public String getDestino() {
         return destino;

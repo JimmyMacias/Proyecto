@@ -25,7 +25,7 @@ public class Cliente{
  
 
     
-    private int idCliente;
+    private static int idCliente;
 
     public Cliente() 
     {     

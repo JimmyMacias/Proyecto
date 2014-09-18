@@ -36,7 +36,7 @@ public class GestionFactura   implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO factura(numeroFactura) values ('"+this.empleado.getNumeroFactura()+"')");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO factura(numero_vuelo,numero_boletos,numero_reservacion) values ("+this.empleado.getNumeroVuelo()+","+this.empleado.getNumeroBoletos()+","+this.empleado.getNumeroReservacion()+")");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -49,56 +49,24 @@ public class GestionFactura   implements IGestion
     @Override
     public void Modificar() throws SQLException 
     {
-    
-    try{
-    Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("UPDATE \"factura\"SET numeroFactura='"+this.empleado.getNumeroFactura()+"''");
-    Conexion.GetInstancia().Desconectar();
-    }
-    catch(SQLException e)
-    {
-    throw e;
-    
+   
    }
- }
+ 
 
     @Override
     public void Nuevo() throws SQLException 
     {
-        this.empleado.setNumeroFactura(" ");
+     
     }
 
     @Override
     public void Eliminar() throws SQLException {
       
-    try{
-    Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("DELETE FROM factura WHERE numeroFactura ='"+empleado.getNumeroFactura()+"'");
-    Conexion.GetInstancia().Desconectar();
-//    DELETE FROM `facturacion`.`cliente` WHERE `cliente`.`cedula` = \'123\'"
-    }
-    catch(SQLException e)
-    {
-    throw e;
-    }
+   
     }
 
     @Override
     public void Consultar() throws SQLException {
-    try{
-    
-    Conexion.GetInstancia().Conectar();
-    
-    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numeroFactura,idReservacion, idFacturaReserva FROM factura WHERE numeroFactura = '"+empleado.getNumeroFactura()+"'");
-    while(cn.next())
-    {
-        this.empleado.setNumeroFactura(cn.getString(1));        
-    }
-    Conexion.GetInstancia().Desconectar();
-    }
-    catch(SQLException e)
-    {
-    throw e;
-    }
+  
   }
 }

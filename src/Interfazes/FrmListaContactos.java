@@ -1,6 +1,11 @@
 
 package Interfazes;
 
+import GESTIONES.GestionHorariosVuelo;
+import GESTIONES.GestionReservacion;
+import GESTIONES.Person;
+import GESTIONES.PersonQueries;
+import java.util.Date;
 import java.util.List;
 import javax.swing.ListSelectionModel;
 import javax.swing.RowFilter;
@@ -9,14 +14,23 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import GESTIONES.Person;
-import GESTIONES.PersonQueries;
+
+
 
 
 public class FrmListaContactos extends javax.swing.JInternalFrame {
 
     PersonQueries oPersonQueries;
     TableRowSorter<TableModel> sorter;
+    GestionReservacion gestClient = new GestionReservacion();
+    DefaultTableModel mimodelo;
+    public static int variable;
+    public static int numeroVuelo;
+    public static String destino;
+    public static String origen;
+    public static Date fecha;
+    public static int valorvuelo;
+
 
     public FrmListaContactos() {
         initComponents();
@@ -76,6 +90,18 @@ public class FrmListaContactos extends javax.swing.JInternalFrame {
 //        tblData.getColumnModel().getColumn(0).setMinWidth(0);//para ocultar el Id
 //        tblData.getColumnModel().getColumn(0).setPreferredWidth(0);//para ocultar el Id
     }
+    
+    
+
+    public void EnviarValores()
+    {
+        //gestClient.getReservacion().setNumeroVuelo((Integer)tblData.getValueAt(tblData.getSelectedRow(),0));
+        variable =((Integer)tblData.getValueAt(tblData.getSelectedRow(),0));
+        System.out.println(variable);
+      
+     
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,7 +121,8 @@ public class FrmListaContactos extends javax.swing.JInternalFrame {
         tblData = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btretornar = new javax.swing.JButton();
+        btnComprarBoleto = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -166,28 +193,48 @@ public class FrmListaContactos extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblData);
 
-        jButton1.setText("Modificar");
+        jButton1.setText("Seleccionar Vuelo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Eliminar");
+        btretornar.setText("retornar");
+        btretornar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btretornarActionPerformed(evt);
+            }
+        });
+
+        btnComprarBoleto.setText("Comprar Boleto");
+        btnComprarBoleto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarBoletoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
+                .addGap(44, 44, 44)
                 .addComponent(jButton1)
-                .addGap(49, 49, 49)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(btnComprarBoleto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btretornar)
+                .addGap(48, 48, 48))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btretornar)
+                    .addComponent(btnComprarBoleto))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -231,11 +278,35 @@ public class FrmListaContactos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboBuscarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        EnviarValores();
+        frmReservacion retorno = new frmReservacion();
+        retorno.show();
+        this.hide();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btretornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btretornarActionPerformed
+        
+    }//GEN-LAST:event_btretornarActionPerformed
+
+    private void btnComprarBoletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarBoletoActionPerformed
+      numeroVuelo = ((Integer)tblData.getValueAt(tblData.getSelectedRow(),0));
+      origen = ((String)tblData.getValueAt(tblData.getSelectedRow(),1));
+      destino = ((String)tblData.getValueAt(tblData.getSelectedRow(),2));
+      fecha = ((Date)tblData.getValueAt(tblData.getSelectedRow(),3));
+      valorvuelo = ((Integer)tblData.getValueAt(tblData.getSelectedRow(),4));
+      
+      frmFacturasVuelos retorno = new frmFacturasVuelos();
+        retorno.show();
+        this.hide();
+    }//GEN-LAST:event_btnComprarBoletoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnComprarBoleto;
+    private javax.swing.JButton btretornar;
     private javax.swing.JComboBox cboBuscar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -10,6 +10,7 @@ import CapaDatos.Conexion;
 import ClasesPoco.Aerolinea;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 /**
@@ -101,4 +102,7 @@ public class GestionAerolinea implements IGestion
     }
     Conexion.GetInstancia().Desconectar();
     }
+    
+   
+    
     }

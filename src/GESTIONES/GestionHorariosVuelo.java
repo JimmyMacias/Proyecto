@@ -10,7 +10,7 @@ import CapaDatos.Conexion;
 import ClasesPoco.Horarios_Vuelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.table.DefaultTableModel;
+
 
 
 
@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionHorariosVuelo implements IGestion
 {
-DefaultTableModel m;
+
     public GestionHorariosVuelo() 
     {
      Conexion.GetInstancia().Enlace();
@@ -41,7 +41,7 @@ DefaultTableModel m;
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO horarios_vuelo(destino, fecha, valor_vuelo, numero_vuelo, origen)values ('"+this.aero.getDestino()+"','"+this.aero.getFecha()+"',"+this.aero.getValor()+","+this.aero.getNumeroVuelo()+",'"+this.aero.getOrigen()+"')");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO horarios_vuelo(destino, fecha, valor_vuelo, numero_vuelo, origen)    VALUES  ('"+this.aero.getDestino()+"','"+this.aero.getFecha()+"',"+this.aero.getValor()+","+this.aero.getNumeroVuelo()+",'"+this.aero.getOrigen()+"')");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)
@@ -116,6 +116,7 @@ DefaultTableModel m;
      
    
     }
+   
     
    
 }

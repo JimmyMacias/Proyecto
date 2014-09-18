@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42c78b57-0ac5-4db6-896d-5e4a7e7c3b2a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     reservacion."cedula_cliente" AS reservacion_cedula_cliente,
+     reservacion."nombre_cliente" AS reservacion_nombre_cliente,
+     reservacion."fecha" AS reservacion_fecha,
+     reservacion."numero_reservacion" AS reservacion_numero_reservacion,
+     reservacion."numero_vuelo" AS reservacion_numero_vuelo,
+     reservacion."valor_vuelo" AS reservacion_valor_vuelo
+FROM
+     "public"."reservacion" reservacion]]>
+	</queryString>
+	<field name="reservacion_cedula_cliente" class="java.lang.String"/>
+	<field name="reservacion_nombre_cliente" class="java.lang.String"/>
+	<field name="reservacion_fecha" class="java.sql.Date"/>
+	<field name="reservacion_numero_reservacion" class="java.math.BigDecimal"/>
+	<field name="reservacion_numero_vuelo" class="java.math.BigDecimal"/>
+	<field name="reservacion_valor_vuelo" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="74b50a31-edbc-4e50-bae7-df8ea9806103" x="187" y="33" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Reporte Reserva]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b4bdf440-94ab-4f5a-980c-7ec65ba0ff73" x="18" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[reservacion_cedula_cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4f68098e-6e84-41c4-b9d6-0503e33c49d6" x="131" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[reservacion_nombre_cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="817ef464-a3c5-4a11-81dc-6a9eb5df2f9e" x="234" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[reservacion_fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b80257f9-6c3a-4d5d-aec2-20ad6628184c" x="342" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[reservacion_numero_reservacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa29e12c-054c-4c7f-8149-2ed3b838f737" x="445" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[reservacion_valor_vuelo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement uuid="bc082d83-211f-4707-8718-d628ba48c6e2" x="18" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reservacion_cedula_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7947c96e-863b-4989-b7c8-7c0f52684b38" x="131" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reservacion_nombre_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e0a6584-b350-4ae9-a84f-c852add296bb" x="234" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reservacion_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d6b3bf5-fc77-4e8f-820e-2a6bc86609e1" x="342" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reservacion_numero_reservacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="83af6573-9d48-46b5-88f5-11067f6fefe9" x="445" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reservacion_valor_vuelo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

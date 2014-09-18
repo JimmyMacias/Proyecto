@@ -6,6 +6,8 @@
 
 package ClasesPoco;
 
+import java.util.Date;
+
 
 
 /**
@@ -13,73 +15,56 @@ package ClasesPoco;
  * @author VjJimmy
  */
 public class Cabecera_Factura {
-    private Cliente datosCliente;
-    private Empleado datosEmpleado;
 
-    public Cabecera_Factura(Cliente datosCliente, Empleado datosEmpleado, String idFactura, boolean tieneReservacion) {
-        this.datosCliente = datosCliente;
-        this.datosEmpleado = datosEmpleado;
-        this.idFactura = idFactura;
-        this.tieneReservacion = tieneReservacion;
+    public Cabecera_Factura(int numeroFactura, Date fecha) {
+        this.numeroFactura = numeroFactura;
+        this.fecha = fecha;
     }
-
-   
     
-    private String idFactura;
+    private int numeroFactura;
 
-    /**
-     * Get the value of idFactura
-     *
-     * @return the value of idFactura
-     */
-    public String getIdFactura() {
-        return idFactura;
+    public Cabecera_Factura() {
+
     }
 
     /**
-     * Set the value of idFactura
+     * Get the value of numeroFactura
      *
-     * @param idFactura new value of idFactura
+     * @return the value of numeroFactura
      */
-    public void setIdFactura(String idFactura) {
-      
-        try 
-    { 
-      this.idFactura = idFactura;
-    } 
-        catch(Exception ex)
-    { //codigo que ejecuta al capturar la excepcion} 
-       System.out.println(ex);  
-    }
-    }
-
-       private boolean tieneReservacion;
-
-    /**
-     * Get the value of tieneReservacion
-     *
-     * @return the value of tieneReservacion
-     */
-    public boolean isTieneReservacion() {
-        return tieneReservacion;
+    public int getNumeroFactura() {
+        return numeroFactura;
     }
 
     /**
-     * Set the value of tieneReservacion
+     * Set the value of numeroFactura
      *
-     * @param tieneReservacion new value of tieneReservacion
+     * @param numeroFactura new value of numeroFactura
      */
-    public void setTieneReservacion(boolean tieneReservacion) {
-         try 
-    { 
-     this.tieneReservacion = tieneReservacion;
-    } 
-        catch(Exception ex)
-    { //codigo que ejecuta al capturar la excepcion} 
-       System.out.println(ex);  
+    public void setNumeroFactura(int numeroFactura) {
+        this.numeroFactura = numeroFactura;
     }
-        
+
+    private Date fecha;
+
+    /**
+     * Get the value of fecha
+     *
+     * @return the value of fecha
+     */
+    public Date getFecha() {
+        return fecha;
     }
+
+    /**
+     * Set the value of fecha
+     *
+     * @param fecha new value of fecha
+     */
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
 
     
 }

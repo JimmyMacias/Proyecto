@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class GestionCliente implements IGestion
 {
-
+    public static int id;
     public GestionCliente() 
     {
        Conexion.GetInstancia().Enlace();
@@ -94,14 +94,17 @@ public class GestionCliente implements IGestion
     @Override
     public void Consultar() throws SQLException {
       Conexion.GetInstancia().Conectar();    
-    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_pass, nombre, cedula, direccion, telefono  FROM cliente WHERE cedula ='"+client.getCedula()+"'");
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_pass, id_cliente, nombre, cedula, direccion, telefono  FROM cliente WHERE cedula ='"+client.getCedula()+"'");
     while(cn.next())
     {
         this.client.setNumeroPass(cn.getString(1));
-        this.client.setNombre(cn.getString(2));
-        this.client.setCedula(cn.getString(3));
-        this.client.setDireccion(cn.getString(4));
-        this.client.setTelefono(cn.getString(5));
+        this.client.setIdCliente(cn.getInt(2));
+        this.client.setNombre(cn.getString(3));
+        this.client.setCedula(cn.getString(4));
+        this.client.setDireccion(cn.getString(5));
+        this.client.setTelefono(cn.getString(6));
+        id =(this.client.getIdCliente());
+        
                 
     }
     Conexion.GetInstancia().Desconectar();

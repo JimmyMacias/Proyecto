@@ -12,7 +12,7 @@ public class PersonQueries {
 
     private static final String URL = "jdbc:postgresql://localhost:5432/SistemaVenta";
     private static final String USERNAME = "postgres";
-    private static final String PASSWORD = "vjjimmy92";
+    private static final String PASSWORD = "Vjjimmy92";
     private Connection connection = null;
     private PreparedStatement selectAllPeople = null;
     private PreparedStatement selectPeopleByLastName = null;
