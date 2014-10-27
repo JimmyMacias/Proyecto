@@ -6,6 +6,8 @@
 
 package ClasesPoco;
 
+import java.util.Date;
+
 
 
 
@@ -75,5 +77,56 @@ public class Factura
     public void setNumeroReservacion(int numeroReservacion) {
         this.numeroReservacion = numeroReservacion;
     }
+    
+    private String origen;
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    private String destino;
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    private Date fecha;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    private double valor;
+
+    /**
+     * Get the value of valor
+     *
+     * @return the value of valor
+     */
+    public double getValor() {
+        return valor;
+    }
+
+    /**
+     * Set the value of valor
+     *
+     * @param valor new value of valor
+     */
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
 
 }

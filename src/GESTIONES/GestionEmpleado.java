@@ -98,7 +98,7 @@ try{
     
     Conexion.GetInstancia().Conectar();
     
-    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT cargo,nombre, cedula, direccion, telefono  FROM empleado WHERE cedula = '"+empleado.getCedula()+"'");
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT cargo,nombre, cedula, direccion, telefono, id_empleado  FROM empleado WHERE cedula = '"+empleado.getCedula()+"'");
     while(cn.next())
     {
         this.empleado.setCargo(cn.getString(1));
@@ -106,7 +106,7 @@ try{
         this.empleado.setCedula(cn.getString(3));
         this.empleado.setDireccion(cn.getString(4));
         this.empleado.setTelefono(cn.getString(5));
-                
+        this.empleado.setIdEmpleado(cn.getInt(6));        
     }
     Conexion.GetInstancia().Desconectar();
     }

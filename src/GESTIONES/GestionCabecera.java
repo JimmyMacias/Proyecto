@@ -12,6 +12,7 @@ package GESTIONES;
  */
 import CapaDatos.Conexion;
 import ClasesPoco.Cliente;
+import ClasesPoco.Empleado;
 import ClasesPoco.Cabecera_Factura;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,12 +48,22 @@ public class GestionCabecera implements IGestion
     {
     this.client=client;
     }
+ 
+    private Empleado empleado=new Empleado();
+    public Empleado getEmpleado()
+    {
+    return empleado;
+    }
+    public void setEmpleado(Empleado empleado)
+    {
+    this.empleado=empleado;
+    }
     
     @Override
     public void Grabar() throws SQLException {
        try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO cabezera_factura(id_cliente, fecha_emision, numero_factura) values ("+this.getCliente().getIdCliente()+",'"+this.cabecera.getFecha()+"',"+this.cabecera.getNumeroFactura()+")");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO cabezera_factura(fecha_emision, numero_factura, id_cliente, id_empleado) values ('"+this.getCabecera().getFecha()+"',"+this.getCabecera().getNumeroFactura()+","+this.getCliente().getIdCliente()+","+this.getEmpleado().getIdEmpleado()+")");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)

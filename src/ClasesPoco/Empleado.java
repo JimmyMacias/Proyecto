@@ -13,7 +13,7 @@ package ClasesPoco;
 public class Empleado 
         {
 
-    public Empleado(String idEmpleado, String cargo, String cedula, String nombre, int idPersona, String telefono, String direccion) {
+    public Empleado(int idEmpleado, String cargo, String cedula, String nombre, int idPersona, String telefono, String direccion) {
         this.idEmpleado = idEmpleado;
         this.cargo = cargo;
         this.cedula = cedula;
@@ -25,7 +25,7 @@ public class Empleado
 
    
     
-    private String idEmpleado;
+    private static int idEmpleado;
 
     public Empleado() {
         
@@ -36,7 +36,7 @@ public class Empleado
      *
      * @return the value of idEmpleado
      */
-    public String getIdEmpleado() {
+    public int getIdEmpleado() {
         return idEmpleado;
     }
 
@@ -45,7 +45,7 @@ public class Empleado
      *
      * @param idEmpleado new value of idEmpleado
      */
-    public void setIdEmpleado(String idEmpleado) {
+    public void setIdEmpleado(int idEmpleado) {
         try 
     { 
     this.idEmpleado = idEmpleado;

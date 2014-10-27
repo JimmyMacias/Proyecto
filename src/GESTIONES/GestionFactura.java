@@ -21,14 +21,14 @@ public class GestionFactura   implements IGestion
        Conexion.GetInstancia().Enlace();
     }
     
-   private Factura empleado=new Factura();
-    public Factura getEmpleado()
+   private Factura factura=new Factura();
+    public Factura getfact()
     {
-    return empleado;
+    return factura;
     }
-    public void setEmpleado(Factura empleado)
+    public void setfact(Factura empleado)
     {
-    this.empleado=empleado;
+    this.factura=empleado;
     }
     
     @Override
@@ -36,7 +36,7 @@ public class GestionFactura   implements IGestion
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("INSERT INTO factura(numero_vuelo,numero_boletos,numero_reservacion) values ("+this.empleado.getNumeroVuelo()+","+this.empleado.getNumeroBoletos()+","+this.empleado.getNumeroReservacion()+")");
+    Conexion.GetInstancia().Ejecutar("INSERT INTO factura(numero_vuelo, numero_boletos, valor_boleto,origen, destino, fecha)values ("+this.factura.getNumeroVuelo()+","+this.factura.getNumeroBoletos()+","+this.factura.getValor()+",'"+this.factura.getOrigen()+"','"+this.factura.getDestino()+"')");
     Conexion.GetInstancia().Desconectar();
     }
     catch(SQLException e)

@@ -93,7 +93,7 @@ public class GestionAerolinea implements IGestion
     @Override
     public void Consultar() throws SQLException {
       Conexion.GetInstancia().Conectar();    
-    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_aerolinea,\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\"  FROM aerolinea WHERE nombre_aerolinea ='"+aero.getNombreAerolinea()+"'");
+    ResultSet cn = Conexion.GetInstancia().EjecutarConsulta("SELECT numero_aerolinea,\"direccion_aerolinea\", \"nombre_aerolinea\", \"numero_asiento\"  FROM aerolinea WHERE numero_aerolinea ="+aero.getNumero_aerolinea()+"");
     while(cn.next())
     {   this.aero.setNumero_aerolinea(Integer.parseInt(cn.getString(1)));
         this.aero.setDireccion(cn.getString(2));

@@ -57,7 +57,6 @@ private void centrarFrame() {
         jMenu1 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -72,7 +71,7 @@ private void centrarFrame() {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\clients.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/clients.png"))); // NOI18N
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -84,7 +83,7 @@ private void centrarFrame() {
         });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\employee.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/employee.png"))); // NOI18N
         jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +92,7 @@ private void centrarFrame() {
         });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\aeroplane.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/aeroplane.png"))); // NOI18N
         jButton7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,10 +137,10 @@ private void centrarFrame() {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton2)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,7 +153,7 @@ private void centrarFrame() {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Tablas de Movimiento"));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\bill.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/bill.png"))); // NOI18N
         jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +162,7 @@ private void centrarFrame() {
         });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\calendar.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/calendar.png"))); // NOI18N
         jButton5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +171,7 @@ private void centrarFrame() {
         });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\VjJimmy\\Desktop\\SistemaVentaPasajesAerolineas\\Iconos\\reservation.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reservation.png"))); // NOI18N
         jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,9 +218,9 @@ private void centrarFrame() {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -258,9 +257,6 @@ private void centrarFrame() {
 
         jMenu7.setText("Paquetes");
         jMenu1.add(jMenu7);
-
-        jMenuItem1.setText("jMenuItem1");
-        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -416,7 +412,6 @@ private void centrarFrame() {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

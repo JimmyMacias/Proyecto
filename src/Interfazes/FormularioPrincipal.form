@@ -21,11 +21,6 @@
                 <Property name="text" type="java.lang.String" value="Paquetes"/>
               </Properties>
             </Menu>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem1"/>
-              </Properties>
-            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
@@ -185,10 +180,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jButton7" max="32767" attributes="0"/>
+                          <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -213,7 +208,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\clients.png"/>
+                  <Image iconType="3" name="/Iconos/clients.png"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -230,7 +225,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\employee.png"/>
+                  <Image iconType="3" name="/Iconos/employee.png"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
               </Properties>
@@ -244,7 +239,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\aeroplane.png"/>
+                  <Image iconType="3" name="/Iconos/aeroplane.png"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
               </Properties>
@@ -324,9 +319,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton6" max="32767" attributes="0"/>
                           <Component id="jButton3" max="32767" attributes="0"/>
-                          <Component id="jButton5" max="32767" attributes="0"/>
+                          <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -346,7 +341,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\bill.png"/>
+                  <Image iconType="3" name="/Iconos/bill.png"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
               </Properties>
@@ -360,7 +355,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\calendar.png"/>
+                  <Image iconType="3" name="/Iconos/calendar.png"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
               </Properties>
@@ -374,7 +369,7 @@
                   <Font name="Tahoma" size="11" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\VjJimmy\Desktop\SistemaVentaPasajesAerolineas\Iconos\reservation.png"/>
+                  <Image iconType="3" name="/Iconos/reservation.png"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
               </Properties>

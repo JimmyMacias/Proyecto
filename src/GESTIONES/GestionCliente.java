@@ -81,7 +81,7 @@ public class GestionCliente implements IGestion
       
     try{
     Conexion.GetInstancia().Conectar();
-    Conexion.GetInstancia().Ejecutar("DELETE FROM Cliente where cedula='"+this.client.getCedula()+"' ");
+    Conexion.GetInstancia().Ejecutar("DELETE FROM Cliente where cedula='"+this.client.getCedula()+"'");
     Conexion.GetInstancia().Desconectar();
 //    DELETE FROM `facturacion`.`cliente` WHERE `cliente`.`cedula` = \'123\'"
     }
